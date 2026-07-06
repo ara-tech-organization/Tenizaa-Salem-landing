@@ -65,8 +65,13 @@
   color: #fff;
 }
 
-.navbar-links a:hover::after {
+.navbar-links a:hover::after,
+.navbar-links a.is-active::after {
   width: 100%;
+}
+
+.navbar-links a.is-active {
+  color: #fff;
 }
 
 .navbar-actions {
@@ -123,6 +128,10 @@
     font-weight: 500;
     color: rgba(255, 255, 255, 0.85);
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .navbar-mobile a.is-active {
+    color: #fff;
+    border-bottom-color: var(--lime-300);
   }
   .navbar-mobile-call {
     display: flex;

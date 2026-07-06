@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import logo from '../assets/tenzia logo.png'
 import { FacebookIcon, InstagramIcon, WhatsappIcon } from './SocialIcons'
@@ -26,11 +27,11 @@ export default function Footer() {
 
         <div className="footer-col">
           <h4>Explore</h4>
-          <a href="/#why-us">Why Us</a>
-          <a href="/#programs">Programs</a>
-          <a href="/#bca">Body Analysis</a>
-          <a href="/#journey">Journey</a>
-          <a href="/#faq">FAQ</a>
+          <Link to="/why-us">Why Us</Link>
+          <Link to="/programs">Programs</Link>
+          <Link to="/bca">Body Analysis</Link>
+          <Link to="/journey">Journey</Link>
+          <Link to="/faq">FAQ</Link>
         </div>
 
         <div className="footer-col">
@@ -54,7 +55,6 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} Tenziaa Wellness and Aesthetic Clinic. All rights reserved.</p>
           <p className="footer-credit">
           <span aria-hidden="true">❤️</span>
-
             Crafted by{' '}
             <a href="https://discovertechnologies.co/" target="_blank" rel="noreferrer">
               Ara Discover Technology

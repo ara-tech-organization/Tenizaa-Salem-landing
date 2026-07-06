@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { CalendarCheck2, CheckCircle2, Phone, Sparkles } from 'lucide-react'
 import useReveal from '../hooks/useReveal'
 import TimePicker from './TimePicker'
@@ -78,9 +78,9 @@ export default function Hero() {
           </ul>
 
           <div className="hero-ctas">
-            <a href="/#lead-form" className="btn btn-primary">
+            <Link to="/lead-form" className="btn btn-primary">
               <CalendarCheck2 size={18} /> Book Your Consultation
-            </a>
+            </Link>
             <a href="tel:+916383837363" className="btn btn-outline">
               <Phone size={18} /> Call Our Wellness Experts
             </a>

@@ -1,4 +1,5 @@
-import { Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import WhyChooseUs from './components/WhyChooseUs'
@@ -32,14 +33,43 @@ function Home() {
   )
 }
 
+const SECTION_IDS = ['top', 'why-us', 'programs', 'bca', 'journey', 'faq', 'lead-form']
+
+function ScrollToSection() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    const section = pathname.replace(/^\/+/, '')
+    const id = SECTION_IDS.includes(section) ? section : 'top'
+    let cancelled = false
+
+    const scrollToTarget = () => {
+      const target = document.getElementById(id)
+      if (target && !cancelled) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+
+    const raf = requestAnimationFrame(scrollToTarget)
+    return () => {
+      cancelled = true
+      cancelAnimationFrame(raf)
+    }
+  }, [pathname])
+
+  return null
+}
+
 function App() {
   return (
     <>
       <Navbar />
       <FloatingSocial />
+      <ScrollToSection />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="/:section" element={<Home />} />
       </Routes>
       <Footer />
     </>
