@@ -56,8 +56,8 @@ export default function Hero() {
 
       <div className="container hero-grid">
         <div ref={revealRef} className="reveal hero-copy">
-          <span className="eyebrow">
-            <Sparkles size={14} /> Best Weight Loss Clinic in Salem for Personalized Weight Loss &amp; Wellness
+          <span className="eyebrow eyebrow-wrap">
+            <Sparkles size={14} /> Best Weight Loss Clinic in Salem for  Personalized Weight Loss &amp; Wellness
           </span>
           <h1>
             Achieve Your <span className="text-brand">Weight Loss Goals</span> with Expert Guidance
