@@ -50,8 +50,17 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <div className="container">
+        <div className="container footer-bottom-inner">
           <p>&copy; {new Date().getFullYear()} Tenziaa Wellness and Aesthetic Clinic. All rights reserved.</p>
+          <p className="footer-credit">
+          <span aria-hidden="true">❤️</span>
+
+            Crafted by{' '}
+            <a href="https://discovertechnologies.co/" target="_blank" rel="noreferrer">
+              Ara Discover Technology
+            </a>{' '}
+            
+          </p>
         </div>
       </div>
     </footer>

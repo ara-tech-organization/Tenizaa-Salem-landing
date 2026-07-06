@@ -1416,7 +1416,32 @@
   text-align: center;
 }
 
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-credit {
+  white-space: nowrap;
+}
+
+.footer-credit a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-credit a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) /* md */ {
+  .footer-bottom-inner {
+    justify-content: center;
+  }
+
   .footer-inner {
     grid-template-columns: 1fr;
     text-align: center;
