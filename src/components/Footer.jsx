@@ -8,6 +8,9 @@ export default function Footer() {
       <div className="container footer-inner">
         <div className="footer-brand">
           <img src={logo} alt="Tenziaa Wellness and Aesthetic Clinic" />
+          <p className="footer-tagline">
+            Personalized weight loss &amp; wellness programs in Salem, built around your body and lifestyle.
+          </p>
           <div className="footer-social">
             <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
               <FacebookIcon size={18} />
