@@ -30,12 +30,12 @@ export default function Hero() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: form.name.value,
-          email: '',
+          email: '-',
           phone: form.mobile.value,
           date: now.toISOString().split('T')[0],
           time: form.time.value,
-          treatment: '',
-          message: '',
+          treatment: '-',
+          message: '-',
           source: 'Website Hero Form',
         }),
       })
