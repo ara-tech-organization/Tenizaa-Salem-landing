@@ -59,7 +59,8 @@ export default function TimePicker({ name, required }) {
     <div className="clock-picker" ref={wrapRef}>
       <input type="hidden" name={name} value={value24} required={required} />
       <button type="button" className="clock-picker-trigger" onClick={() => setOpen((prev) => !prev)}>
-        <span className={display ? '' : 'is-placeholder'}>{display || 'Select a time'}</span>
+        <Clock size={18} className="hero-form-field-icon clock-picker-icon" />
+        <span className={display ? '' : 'is-placeholder'}>{display || 'Preferred Time'}</span>
         <span className="clock-picker-badge">
           <Clock size={16} />
         </span>

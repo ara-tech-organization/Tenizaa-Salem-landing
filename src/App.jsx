@@ -14,6 +14,7 @@ import FinalCta from './components/FinalCta'
 import Footer from './components/Footer'
 import FloatingSocial from './components/FloatingSocial'
 import ThankYou from './components/ThankYou'
+import LeadPopup from './components/LeadPopup'
 import './App.css'
 
 function Home() {
@@ -65,6 +66,7 @@ function App() {
     <>
       <Navbar />
       <FloatingSocial />
+      <LeadPopup />
       <ScrollToSection />
       <Routes>
         <Route path="/" element={<Home />} />

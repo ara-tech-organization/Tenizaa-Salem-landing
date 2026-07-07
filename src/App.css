@@ -328,25 +328,55 @@
   box-shadow: 0 0 0 4px rgba(141, 198, 63, 0.15);
 }
 
+/* ---------- Icon fields (Hero + popup lead forms) ---------- */
+.hero-form-field {
+  position: relative;
+  display: block;
+}
+
+.hero-form-field-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--green-600);
+  pointer-events: none;
+}
+
+.hero-form-field input {
+  width: 100%;
+  padding-left: 44px;
+}
+
+.hero-form-field input::placeholder {
+  color: var(--text);
+  font-weight: 400;
+}
+
 /* ---------- Clock time picker ---------- */
 .clock-picker {
   position: relative;
 }
 
 .clock-picker-trigger {
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: var(--sans);
   font-size: 15px;
-  padding: 13px 16px;
+  padding: 13px 16px 13px 44px;
   border-radius: var(--radius-sm);
   border: 1.5px solid var(--border);
   background: var(--sage-50);
   color: var(--text-h);
   cursor: pointer;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.clock-picker-icon {
+  left: 16px;
 }
 
 .clock-picker-trigger .is-placeholder {
@@ -364,19 +394,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--gradient-brand);
-  color: #fff;
+  color: var(--green-600);
   flex-shrink: 0;
 }
 
 .clock-picker-pop {
   position: absolute;
   z-index: 20;
-  bottom: calc(100% + 10px);
+  top: -10px;
   left: 0;
+  transform: translateY(-100%);
   width: 260px;
   background: #fff;
   border: 1px solid var(--border);
@@ -482,6 +509,69 @@
 .hero-form-submit {
   margin-top: 6px;
   width: 100%;
+}
+
+/* ---------- Lead popup ---------- */
+.lead-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 20, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.lead-popup-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.lead-popup-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--sage-50);
+  color: var(--text-h);
+  cursor: pointer;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.lead-popup-close:hover {
+  border-color: var(--green-500);
+  color: var(--green-600);
+}
+
+.lead-popup-badge {
+  margin-bottom: 16px;
+}
+
+.lead-popup-card h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  padding-right: 30px;
+}
+
+.lead-popup-card > p {
+  font-size: 14.5px;
+  color: var(--text);
+  margin-bottom: 24px;
 }
 
 .form-success {

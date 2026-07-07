@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { CalendarCheck2, CheckCircle2, Phone, Sparkles } from 'lucide-react'
+import { ArrowRight, CalendarCheck2, CheckCircle2, Phone, Sparkles } from 'lucide-react'
 import useReveal from '../hooks/useReveal'
-import TimePicker from './TimePicker'
+import LeadFormFields from './LeadFormFields'
+import { submitLead } from '../lib/submitLead'
 
 const POINTS = [
   'Personalized Weight Loss Programs',
@@ -20,25 +21,9 @@ export default function Hero() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const form = event.target
-    const now = new Date()
-
     setSubmitting(true)
     try {
-      await fetch('https://tenziaa.com/api/email.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name.value,
-          email: '-',
-          phone: form.mobile.value,
-          date: now.toISOString().split('T')[0],
-          time: form.time.value,
-          treatment: '-',
-          message: '-',
-          source: 'Website Hero Form',
-        }),
-      })
+      await submitLead(event.target, 'Website Hero Form')
     } catch (error) {
       console.error('Lead form submission failed:', error)
     } finally {
@@ -94,25 +79,18 @@ export default function Hero() {
             </div>
             <h2>Start Your Weight Loss Journey Today</h2>
             <p>
-              Book a consultation with our wellness experts and receive a personalized assessment based on
-              your health goals, body composition, and lifestyle.
+              Fill in your details and our wellness expert will contact you within 30 minutes during clinic
+              hours.
             </p>
 
             <form id="lead-form" className="hero-form" onSubmit={handleSubmit}>
-              <label>
-                <span>Full Name</span>
-                <input type="text" name="name" placeholder="Enter your full name" required />
-              </label>
-              <label>
-                <span>Mobile Number</span>
-                <input type="tel" name="mobile" placeholder="Enter your mobile number" required />
-              </label>
-              <label>
-                <span>Preferred Time to Call</span>
-                <TimePicker name="time" required />
-              </label>
+              <LeadFormFields />
               <button type="submit" className="btn btn-primary hero-form-submit" disabled={submitting}>
-                {submitting ? 'Submitting…' : 'Book My Consultation'}
+                {submitting ? 'Submitting…' : (
+                  <>
+                    Get My Consultation <ArrowRight size={18} />
+                  </>
+                )}
               </button>
             </form>
           </div>
