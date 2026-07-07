@@ -5,7 +5,7 @@ export default function FloatingSocial() {
   return (
     <>
       <a
-        href="tel:+916383837363"
+        href="tel:+919344709090"
         className="floating-action floating-action-left floating-action-call"
         aria-label="Call Tenziaa Wellness Clinic"
       >
@@ -13,7 +13,7 @@ export default function FloatingSocial() {
         <Phone size={22} strokeWidth={2.2} />
       </a>
       <a
-        href="https://wa.me/916383837363"
+        href="https://wa.me/919344709090"
         target="_blank"
         rel="noreferrer"
         className="floating-action floating-action-right floating-action-whatsapp"

@@ -19,7 +19,7 @@ export default function Footer() {
             <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
               <InstagramIcon size={18} />
             </a>
-            <a href="https://wa.me/916383837363" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+            <a href="https://wa.me/919344709090" target="_blank" rel="noreferrer" aria-label="WhatsApp">
               <WhatsappIcon size={18} />
             </a>
           </div>
@@ -36,8 +36,8 @@ export default function Footer() {
 
         <div className="footer-col">
           <h4>Contact</h4>
-          <a href="tel:+916383837363">
-            <Phone size={16} /> +91 63838 37363
+          <a href="tel:+919344709090">
+            <Phone size={16} /> +91 93447 09090
           </a>
           <a href="mailto:tenziaasalem@gmail.com">
             <Mail size={16} /> tenziaasalem@gmail.com

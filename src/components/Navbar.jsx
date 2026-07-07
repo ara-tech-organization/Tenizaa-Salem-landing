@@ -68,9 +68,9 @@ export default function Navbar() {
         </nav>
 
         <div className="navbar-actions">
-          <a href="tel:+916383837363" className="navbar-call">
+          <a href="tel:+919344709090" className="navbar-call">
             <Phone size={16} strokeWidth={2.4} />
-            <span>+91 63838 37363</span>
+            <span>+91 93447 09090</span>
           </a>
           <Link to="/lead-form" className="btn btn-primary navbar-cta">
             Book Consultation
@@ -94,8 +94,8 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <a href="tel:+916383837363" className="navbar-mobile-call">
-            <Phone size={16} strokeWidth={2.4} /> +91 63838 37363
+          <a href="tel:+919344709090" className="navbar-mobile-call">
+            <Phone size={16} strokeWidth={2.4} /> +91 93447 09090
           </a>
           <Link to="/lead-form" className="btn btn-primary" onClick={() => setOpen(false)}>
             Book Consultation

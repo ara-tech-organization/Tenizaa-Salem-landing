@@ -8,6 +8,7 @@ import BodyAnalysis from './components/BodyAnalysis'
 import Benefits from './components/Benefits'
 import LocalTrust from './components/LocalTrust'
 import Journey from './components/Journey'
+import Transformations from './components/Transformations'
 import Testimonials from './components/Testimonials'
 import Faq from './components/Faq'
 import FinalCta from './components/FinalCta'
@@ -27,6 +28,7 @@ function Home() {
       <Benefits />
       <LocalTrust />
       <Journey />
+      <Transformations />
       <Testimonials />
       <Faq />
       <FinalCta />

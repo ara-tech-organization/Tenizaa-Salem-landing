@@ -64,9 +64,9 @@ export default function Hero() {
 
           <div className="hero-ctas">
             <Link to="/lead-form" className="btn btn-primary">
-              <CalendarCheck2 size={18} /> Book Your Consultation
+              <CalendarCheck2 size={18} /> Book Consultation
             </Link>
-            <a href="tel:+916383837363" className="btn btn-outline">
+            <a href="tel:+919344709090" className="btn btn-outline">
               <Phone size={18} /> Call Our Wellness Experts
             </a>
           </div>
@@ -88,7 +88,7 @@ export default function Hero() {
               <button type="submit" className="btn btn-primary hero-form-submit" disabled={submitting}>
                 {submitting ? 'Submitting…' : (
                   <>
-                    Get My Consultation <ArrowRight size={18} />
+                    Book Consultation <ArrowRight size={18} />
                   </>
                 )}
               </button>

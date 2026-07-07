@@ -5,14 +5,14 @@ const TESTIMONIALS = [
   {
     quote:
       "The personalized diet plan suited my routine perfectly. The team's regular guidance and encouragement helped me stay consistent with my goals.",
-    author: 'Client, Salem',
-    initial: 'S',
+    author: 'Kavitha, Salem',
+    initial: 'K',
   },
   {
     quote:
       'The wellness experts explained every step clearly and created a program that was practical for my lifestyle. I felt supported throughout my journey.',
-    author: 'Client, Salem',
-    initial: 'S',
+    author: 'Naveen Kumar, Salem',
+    initial: 'N',
   },
 ]
 

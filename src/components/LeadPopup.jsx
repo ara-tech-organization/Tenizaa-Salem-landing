@@ -59,7 +59,7 @@ export default function LeadPopup() {
           <button type="submit" className="btn btn-primary hero-form-submit" disabled={submitting}>
             {submitting ? 'Submitting…' : (
               <>
-                Get My Consultation <ArrowRight size={18} />
+                Book Consultation <ArrowRight size={18} />
               </>
             )}
           </button>

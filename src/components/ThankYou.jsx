@@ -25,7 +25,7 @@ export default function ThankYou() {
           <Link to="/" className="btn btn-primary">
             <Home size={18} /> Back to Home
           </Link>
-          <a href="tel:+916383837363" className="btn btn-outline">
+          <a href="tel:+919344709090" className="btn btn-outline">
             <Phone size={18} /> Call Us Now
           </a>
         </div>
