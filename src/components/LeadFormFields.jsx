@@ -1,5 +1,4 @@
 import { Calendar, MapPin, Smartphone, User } from 'lucide-react'
-import TimePicker from './TimePicker'
 
 export default function LeadFormFields() {
   return (
@@ -20,7 +19,6 @@ export default function LeadFormFields() {
         <Calendar size={18} className="hero-form-field-icon" />
         <input type="date" name="date" aria-label="Preferred Date" required />
       </label>
-      <TimePicker name="time" required />
     </>
   )
 }
