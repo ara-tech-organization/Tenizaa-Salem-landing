@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { ArrowRight, CalendarCheck2, CheckCircle2, Phone, Sparkles } from 'lucide-react'
 import useReveal from '../hooks/useReveal'
 import LeadFormFields from './LeadFormFields'
 import { submitLead } from '../lib/submitLead'
+import { handleSectionNavClick, pathForId } from '../lib/sectionNav'
 
 const POINTS = [
   'Personalized Weight Loss Programs',
@@ -63,9 +64,13 @@ export default function Hero() {
           </ul>
 
           <div className="hero-ctas">
-            <Link to="/lead-form" className="btn btn-primary">
+            <a
+              href={pathForId('lead-form')}
+              className="btn btn-primary"
+              onClick={(e) => handleSectionNavClick(e, 'lead-form')}
+            >
               <CalendarCheck2 size={18} /> Book Consultation
-            </Link>
+            </a>
             <a href="tel:+919344709090" className="btn btn-outline">
               <Phone size={18} /> Call Our Wellness Experts
             </a>

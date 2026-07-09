@@ -13,7 +13,15 @@ export default function LeadFormFields() {
       </label>
       <label className="hero-form-field">
         <MapPin size={18} className="hero-form-field-icon" />
-        <input type="text" name="city" placeholder="City" aria-label="City" required />
+        <input
+          type="text"
+          name="city"
+          placeholder="City"
+          aria-label="City"
+          pattern="[A-Za-z ]+"
+          title="City should only contain letters"
+          required
+        />
       </label>
       <label className="hero-form-field">
         <Calendar size={18} className="hero-form-field-icon" />

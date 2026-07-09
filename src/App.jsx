@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
+import { idForPath, scrollToId } from './lib/sectionNav'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import WhyChooseUs from './components/WhyChooseUs'
@@ -36,29 +37,28 @@ function Home() {
   )
 }
 
-const SECTION_IDS = ['top', 'why-us', 'programs', 'bca', 'journey', 'faq', 'lead-form']
-
 function ScrollToSection() {
   const { pathname } = useLocation()
+  const isThankYou = pathname.replace(/\/+$/, '') === '/thank-you'
 
   useEffect(() => {
-    const section = pathname.replace(/^\/+/, '')
-    const id = SECTION_IDS.includes(section) ? section : 'top'
-    let cancelled = false
+    if (isThankYou) return undefined
 
-    const scrollToTarget = () => {
-      const target = document.getElementById(id)
-      if (target && !cancelled) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
+    const id = idForPath(window.location.pathname)
+    let raf
+    if (id !== 'top') {
+      raf = requestAnimationFrame(() => scrollToId(id, { replace: true, smooth: false }))
     }
 
-    const raf = requestAnimationFrame(scrollToTarget)
+    const onPopState = () => {
+      scrollToId(idForPath(window.location.pathname), { replace: true, smooth: false })
+    }
+    window.addEventListener('popstate', onPopState)
     return () => {
-      cancelled = true
-      cancelAnimationFrame(raf)
+      if (raf) cancelAnimationFrame(raf)
+      window.removeEventListener('popstate', onPopState)
     }
-  }, [pathname])
+  }, [isThankYou])
 
   return null
 }
@@ -71,9 +71,8 @@ function App() {
       <LeadPopup />
       <ScrollToSection />
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/thank-you" element={<ThankYou />} />
-        <Route path="/:section" element={<Home />} />
+        <Route path="/:section?" element={<Home />} />
       </Routes>
       <Footer />
     </>

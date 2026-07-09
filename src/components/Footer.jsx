@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import logo from '../assets/tenzia logo.png'
 import { FacebookIcon, InstagramIcon, WhatsappIcon } from './SocialIcons'
+import { handleSectionNavClick, pathForId } from '../lib/sectionNav'
 
 export default function Footer() {
   return (
@@ -27,11 +27,11 @@ export default function Footer() {
 
         <div className="footer-col">
           <h4>Explore</h4>
-          <Link to="/why-us">Why Us</Link>
-          <Link to="/programs">Programs</Link>
-          <Link to="/bca">Body Analysis</Link>
-          <Link to="/journey">Journey</Link>
-          <Link to="/faq">FAQ</Link>
+          <a href={pathForId('why-us')} onClick={(e) => handleSectionNavClick(e, 'why-us')}>Why Us</a>
+          <a href={pathForId('programs')} onClick={(e) => handleSectionNavClick(e, 'programs')}>Programs</a>
+          <a href={pathForId('bca')} onClick={(e) => handleSectionNavClick(e, 'bca')}>Body Analysis</a>
+          <a href={pathForId('journey')} onClick={(e) => handleSectionNavClick(e, 'journey')}>Journey</a>
+          <a href={pathForId('faq')} onClick={(e) => handleSectionNavClick(e, 'faq')}>FAQ</a>
         </div>
 
         <div className="footer-col">

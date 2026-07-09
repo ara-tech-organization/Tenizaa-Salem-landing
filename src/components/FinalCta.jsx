@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import { CalendarCheck2, PhoneCall } from 'lucide-react'
 import Reveal from './Reveal'
+import { handleSectionNavClick, pathForId } from '../lib/sectionNav'
 
 export default function FinalCta() {
   return (
@@ -15,9 +15,13 @@ export default function FinalCta() {
             around your body, lifestyle, and long-term wellness goals.
           </p>
           <div className="final-cta-actions">
-            <Link to="/lead-form" className="btn btn-primary">
+            <a
+              href={pathForId('lead-form')}
+              className="btn btn-primary"
+              onClick={(e) => handleSectionNavClick(e, 'lead-form')}
+            >
               <CalendarCheck2 size={18} /> Book Consultation
-            </Link>
+            </a>
             <a href="tel:+919344709090" className="btn btn-ghost-dark">
               <PhoneCall size={18} /> Talk to Our Wellness Expert Today
             </a>

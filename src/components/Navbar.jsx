@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { Menu, Phone, X } from 'lucide-react'
+import { handleSectionNavClick, pathForId } from '../lib/sectionNav'
 import logo from '../assets/tenzia logo.png'
 
 const LINKS = [
-  { to: '/why-us', id: 'why-us', label: 'Why Us' },
-  { to: '/programs', id: 'programs', label: 'Programs' },
-  { to: '/bca', id: 'bca', label: 'Body Analysis' },
-  { to: '/journey', id: 'journey', label: 'Journey' },
-  { to: '/faq', id: 'faq', label: 'FAQ' },
+  { id: 'why-us', label: 'Why Us' },
+  { id: 'programs', label: 'Programs' },
+  { id: 'bca', label: 'Body Analysis' },
+  { id: 'journey', label: 'Journey' },
+  { id: 'faq', label: 'FAQ' },
 ]
 
 const SCROLL_SPY_IDS = ['top', 'why-us', 'programs', 'bca', 'journey', 'faq', 'lead-form']
@@ -51,19 +51,20 @@ export default function Navbar() {
   return (
     <header className={`navbar ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="container navbar-inner">
-        <Link to="/top" className="navbar-logo">
+        <a href={pathForId('top')} className="navbar-logo" onClick={(e) => handleSectionNavClick(e, 'top')}>
           <img src={logo} alt="Tenziaa Wellness and Aesthetic Clinic" />
-        </Link>
+        </a>
 
         <nav className="navbar-links">
           {LINKS.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
+            <a
+              key={link.id}
+              href={pathForId(link.id)}
               className={active === link.id ? 'is-active' : ''}
+              onClick={(e) => handleSectionNavClick(e, link.id)}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -72,9 +73,13 @@ export default function Navbar() {
             <Phone size={16} strokeWidth={2.4} />
             <span>+91 93447 09090</span>
           </a>
-          <Link to="/lead-form" className="btn btn-primary navbar-cta">
+          <a
+            href={pathForId('lead-form')}
+            className="btn btn-primary navbar-cta"
+            onClick={(e) => handleSectionNavClick(e, 'lead-form')}
+          >
             Book Consultation
-          </Link>
+          </a>
         </div>
 
         <button className="navbar-toggle" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
@@ -85,21 +90,31 @@ export default function Navbar() {
       {open && (
         <div className="navbar-mobile">
           {LINKS.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
+            <a
+              key={link.id}
+              href={pathForId(link.id)}
               className={active === link.id ? 'is-active' : ''}
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                handleSectionNavClick(e, link.id)
+                setOpen(false)
+              }}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
           <a href="tel:+919344709090" className="navbar-mobile-call">
             <Phone size={16} strokeWidth={2.4} /> +91 93447 09090
           </a>
-          <Link to="/lead-form" className="btn btn-primary" onClick={() => setOpen(false)}>
+          <a
+            href={pathForId('lead-form')}
+            className="btn btn-primary"
+            onClick={(e) => {
+              handleSectionNavClick(e, 'lead-form')
+              setOpen(false)
+            }}
+          >
             Book Consultation
-          </Link>
+          </a>
         </div>
       )}
     </header>

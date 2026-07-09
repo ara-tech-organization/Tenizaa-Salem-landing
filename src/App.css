@@ -1,3 +1,13 @@
+#top,
+#why-us,
+#programs,
+#bca,
+#journey,
+#faq,
+#lead-form {
+  scroll-margin-top: 96px;
+}
+
 /* ---------- Navbar ---------- */
 .navbar {
   position: sticky;
